@@ -8,10 +8,12 @@ import {
   Collapse
 } from 'reactstrap'
 import { NavLink } from 'react-router-dom';
+import { useCart } from '../app/shared/CART';
 import MHBDipsLogo from '../app/assets/img/logo.jpg';
 
 function Header() {
-  const [menuopen, setMenuOpen] = useState(false)
+  const [menuopen, setMenuOpen] = useState(false);
+  const { cartItems } = useCart();
   return (
     <div className='Navbar'>
       <Navbar dark sticky='top' expand='md'>
@@ -27,22 +29,27 @@ function Header() {
                   <i className='fa fa-home fa-lg' /> Home
                 </NavLink>
               </NavItem>
+              
               <NavItem>
                 <NavLink className='nav-link' to='/products'>Products</NavLink>
               </NavItem>
+              
               <NavItem>
                 <NavLink className='nav-link' to='/about'>
                   <i className='fa fa-info fa-lg' /> About
                 </NavLink>
               </NavItem>
+              
               <NavItem>
                 <NavLink className='nav-link' to='/contact'>
                   <i className='fa fa-address-card fa-lg' /> Contact
                 </NavLink>
               </NavItem>
+              
               <NavItem>
                 <NavLink className='nav-link' to='/cart'>
                   <i className='fa fa-shopping-cart fa-lg' /> Cart
+                  {cartItems.length > 0 && <span className='cart-badge'>cartItems.length</span>}
                 </NavLink>
               </NavItem>
             </Nav>

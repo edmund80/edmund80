@@ -1,15 +1,28 @@
-import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
+import { Card, CardTitle, CardImg, CardText, CardBody, Col, Button } from 'reactstrap';
+import { useCart } from '../../shared/CART';
 
 const ProductDetail = ({ product }) => {
-    const { image, name, description } = product;
-
+    const { id, image, name, price, rating } = product;
+    const { addToCart } = useCart();
 
     return (
         <Col md='12' className='m-4'>
-            <Card>
-                <CardImg top src={image} alt={name} />
+            <Card className='card'
+            style={{
+                width: '32rem'
+            }}
+            >
+                <CardImg
+                    alt={name}
+                    src={image}
+                />
                 <CardBody>
-                    <CardText>{description}</CardText>
+                    <CardTitle>{name}</CardTitle>
+                    <CardText>{price}</CardText>
+                    <CardText>{rating}</CardText>
+                    <Button onClick={() => addToCart({ image, id, name, price, rating })}>
+                        Add to Card
+                    </Button>
                 </CardBody>
             </Card>
         </Col>

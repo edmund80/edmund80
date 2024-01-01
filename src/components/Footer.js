@@ -6,7 +6,6 @@ const Footer = () => {
         <footer className='site-footer'>
             <Container>
                 <Row>
-                    
                     <Col xs={{ size: 4, offset: 1 }} sm='2'>
                         <h5>Links</h5>
                         <ul className='list-unstyled'>

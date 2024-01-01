@@ -70,14 +70,13 @@ h2 {
 }
 
 h3 {
-  text-align: center;
   font-size: 2rem;
   font-family: Caveat;
   color: #de7aff;
 }
 
-.img-fluid {
-  width: 97%;
+.home-page {
+  width: 50rem;
   padding: 10px;
   height: 40rem;
 }
@@ -96,8 +95,6 @@ p {
 }
 
 .card  {
-  width: 1.618;
-  margin: 10px;
   padding: 70px;
   background-color: #b9e3f7;
 }
@@ -174,11 +171,10 @@ input {
   width: 30rem;
 }
 
-footer {
-  height: 100px;
+.site-footer {
+  height: 200px;
   background-color: #b9e3f7;
   text-align: center;
-  padding: 20px;
 }
 
 .shopping-cart {
@@ -190,9 +186,3 @@ footer {
   width: 100%;
 }
 
-Footer {
-  width: 1;
-  background-color: #b9e3f7;
-  height: 100px;
-  padding: 10px;
-}
